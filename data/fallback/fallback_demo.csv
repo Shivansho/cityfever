@@ -1,0 +1,26 @@
+id,complaint_text,department,issue_type,department_confidence,issue_confidence,priority_score,priority_level,locality,duration_text,latitude,longitude,duplicate_cluster_id,status,created_at
+C1001,"Sewage has been overflowing near a school for three days.",Sewage,Sewage Overflow,0.95,0.93,88,High,Gandhi Road,3 days,27.4924,77.6737,CL-001,Pending,2026-09-15T08:10:00
+C1002,"Sewage overflow again outside the same school on Gandhi Road, water is black and smells terrible.",Sewage,Sewage Overflow,0.93,0.90,85,High,Gandhi Road,2 days,27.4926,77.6739,CL-001,Pending,2026-09-15T09:40:00
+C1003,"Drain near Gandhi Road school block is flooding onto the street, kids have to walk through it.",Sewage,Sewage Overflow,0.88,0.84,83,High,Gandhi Road,,27.4922,77.6735,CL-001,Pending,2026-09-16T07:05:00
+C1004,"Sewage line burst near Gandhi Road junction, standing water for 4 days now.",Sewage,Sewage Overflow,0.91,0.89,86,High,Gandhi Road,4 days,27.4928,77.6741,CL-001,Manual Review,2026-09-16T11:20:00
+C1005,"Large pothole near Krishna Nagar market for 3 days, two bikes have skidded already.",Roads,Pothole,0.94,0.91,82,High,Krishna Nagar,3 days,27.5010,77.6802,,Pending,2026-09-12T10:00:00
+C1006,"Water pipeline leakage on Sector 12 main road since Monday, water is being wasted continuously.",Water,Water Leakage,0.92,0.90,74,High,Sector 12,since Monday,27.5105,77.6650,CL-002,Pending,2026-09-14T06:30:00
+C1007,"Another water leak spotted very close to the Sector 12 main road leak, same stretch of pipeline.",Water,Water Leakage,0.90,0.87,72,High,Sector 12,1 day,27.5107,77.6652,CL-002,Pending,2026-09-14T15:45:00
+C1008,"Water pooling on Sector 12 road near the bus stop, suspect same pipeline issue as nearby reports.",Water,Water Leakage,0.85,0.82,70,High,Sector 12,,27.5103,77.6648,CL-002,Pending,2026-09-15T08:00:00
+C1009,"Streetlight not working near Gate 2 of the stadium for over a week, area is very dark at night.",Electrical,Broken Streetlight,0.89,0.86,58,Medium,Gate 2,over a week,27.4870,77.6600,,Pending,2026-09-10T19:00:00
+C1010,"Garbage not collected in Nehru Colony for 5 days, pile is attracting stray dogs.",Sanitation,Garbage,0.91,0.88,55,Medium,Nehru Colony,5 days,27.4950,77.6710,,Pending,2026-09-11T09:15:00
+C1011,"Traffic signal at the main crossing has been stuck on red for both directions since morning.",Traffic,Traffic Signal Fault,0.83,0.79,64,High,Main Crossing,since morning,27.4990,77.6790,,Pending,2026-09-17T08:20:00
+C1012,"Park near Shastri Nagar has broken swings and the gate lock is missing.",Parks,Park Maintenance,0.87,0.81,28,Low,Shastri Nagar,,27.5020,77.6820,,Pending,2026-09-09T14:00:00
+C1013,"Some issue near the old market, not sure what department, road looks broken and there is also water.",Other,Other,0.42,0.38,45,Medium,Old Market,,27.4960,77.6770,,Manual Review,2026-09-13T12:00:00
+C1014,"Street dogs and garbage problem increasing near the bus depot, please look into it.",Sanitation,Garbage,0.55,0.60,38,Medium,Bus Depot,,27.4940,77.6690,,Manual Review,2026-09-12T17:30:00
+C1015,"Manhole cover missing near Krishna Nagar market, dangerous at night for pedestrians.",Roads,Pothole,0.61,0.58,79,High,Krishna Nagar,,27.5012,77.6805,,Pending,2026-09-16T20:10:00
+C1016,"Electrical wire hanging low near the school compound wall, looks unsafe.",Electrical,Broken Streetlight,0.68,0.52,80,High,Gandhi Road,,27.4930,77.6733,,Pending,2026-09-17T07:45:00
+C1017,"Water tanker did not arrive in Sector 8 for the third day in a row.",Water,Water Leakage,0.59,0.44,40,Medium,Sector 8,3 days,27.5150,77.6600,,Manual Review,2026-09-14T10:00:00
+C1018,"Garbage bin overflowing near the park entrance in Shastri Nagar for two days.",Sanitation,Garbage,0.86,0.83,35,Medium,Shastri Nagar,2 days,27.5018,77.6818,,Pending,2026-09-15T16:00:00
+C1019,"Deep pothole formed after last night's rain on the ring road near the flyover.",Roads,Pothole,0.92,0.90,66,High,Ring Road,,27.4880,77.6740,,Pending,2026-09-17T09:00:00
+C1020,"Traffic jam every evening near the market due to encroachment by vendors on the main road.",Traffic,Traffic Signal Fault,0.49,0.41,30,Low,Old Market,every evening,27.4958,77.6772,,Manual Review,2026-09-13T18:30:00
+C1021,"Sewage smell coming from a blocked drain near Nehru Colony park.",Sewage,Sewage Overflow,0.84,0.80,62,High,Nehru Colony,,27.4952,77.6715,,Pending,2026-09-16T13:15:00
+C1022,"Park benches broken and grass overgrown in the community park near Sector 8.",Parks,Park Maintenance,0.90,0.85,20,Low,Sector 8,,27.5148,77.6605,,Pending,2026-09-08T11:00:00
+C1023,"Streetlights out along the entire stretch near the stadium, feels unsafe walking at night.",Electrical,Broken Streetlight,0.88,0.84,60,Medium,Gate 2,,27.4868,77.6598,,Pending,2026-09-11T20:00:00
+C1024,"There is a large pothole near Krishna Nagar market for 3 days.",Roads,Pothole,0.94,0.91,82,High,Krishna Nagar,3 days,27.4920,77.6730,,Pending,2026-09-18T09:00:00
+C1025,"Water leaking from a broken pipe joint outside Sector 12 shops, small but continuous for a week.",Water,Water Leakage,0.81,0.77,52,Medium,Sector 12,a week,27.5100,77.6655,,Pending,2026-09-11T07:00:00

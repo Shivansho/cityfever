@@ -1,0 +1,52 @@
+[
+  {"complaint_text": "There is a large pothole near Krishna Nagar market for 3 days.", "latitude": 27.1801, "longitude": 78.0123},
+  {"complaint_text": "Deep pothole on the main road in Krishna Nagar causing accidents for 3 days.", "latitude": 27.1799, "longitude": 78.0121},
+  {"complaint_text": "Same pothole near Krishna Nagar market getting worse, still not fixed after 3 days.", "latitude": 27.1803, "longitude": 78.0125},
+  {"complaint_text": "Footpath tiles near Sanjay Place are cracked and dangerous for walkers since last week.", "latitude": 27.1988, "longitude": 78.0072},
+  {"complaint_text": "Severe road damage on the Fatehabad Road stretch for 2 weeks.", "latitude": 27.1567, "longitude": 78.0421},
+  {"complaint_text": "Speed breaker near Dayalbagh school has no paint markings, reported for a week.", "latitude": 27.1836, "longitude": 77.9832},
+
+  {"complaint_text": "Water pipeline leaking near Shahganj since last week, wasting a lot of water.", "latitude": 27.2079, "longitude": 77.9791},
+  {"complaint_text": "No water supply in Rakabganj for 10 days, residents are struggling.", "latitude": 27.1889, "longitude": 78.0056},
+  {"complaint_text": "Rakabganj has had zero water supply for 10 days now.", "latitude": 27.1885, "longitude": 78.0059},
+  {"complaint_text": "Water coming from the tap in Kamla Nagar is contaminated and smells bad since yesterday.", "latitude": 27.1912, "longitude": 78.0284},
+  {"complaint_text": "Main water pipeline burst near Sadar Bazaar for 2 days, flooding the street.", "latitude": 27.1958, "longitude": 78.0064},
+
+  {"complaint_text": "Garbage bin near Shastripuram is overflowing for 3 days.", "latitude": 27.2266, "longitude": 78.0621},
+  {"complaint_text": "Garbage has not been collected in Nunhai for a week.", "latitude": 27.2019, "longitude": 78.0398},
+  {"complaint_text": "Huge pile of garbage dumped near Tajganj market for 10 days, terrible smell.", "latitude": 27.1728, "longitude": 78.0421},
+  {"complaint_text": "Public toilet near Loha Mandi is unusable and dirty since last week.", "latitude": 27.1863, "longitude": 78.0128},
+  {"complaint_text": "A dead animal has been lying on the road in Mantola for 2 days.", "latitude": 27.1935, "longitude": 78.0089},
+
+  {"complaint_text": "Streetlight near Balkeshwar has not been working for a month, road is pitch dark at night.", "latitude": 27.1918, "longitude": 77.9964},
+  {"complaint_text": "Frequent power cuts in Khandari for 3 days.", "latitude": 27.2069, "longitude": 78.0086},
+  {"complaint_text": "Exposed electrical wire hanging near Bijlighar since yesterday, very dangerous.", "latitude": 27.1802, "longitude": 78.0212},
+  {"complaint_text": "Exposed live wire near Bijlighar bus stand, reported yesterday, kids play nearby.", "latitude": 27.1804, "longitude": 78.0210},
+  {"complaint_text": "Transformer near Trans Yamuna is making loud noise and sparking for 2 days.", "latitude": 27.2201, "longitude": 78.0512},
+
+  {"complaint_text": "Drain near Rambagh is completely blocked for 2 weeks.", "latitude": 27.1841, "longitude": 78.0356},
+  {"complaint_text": "Sewage is overflowing onto the street in Sikandra since last week, health hazard.", "latitude": 27.2312, "longitude": 77.9445},
+  {"complaint_text": "Open manhole near Shaheed Nagar for 3 days, risk of accidents at night.", "latitude": 27.1976, "longitude": 78.0201},
+  {"complaint_text": "Manhole cover missing in Shaheed Nagar, reported 3 days ago, someone almost fell in.", "latitude": 27.1978, "longitude": 78.0203},
+  {"complaint_text": "Terrible foul smell coming from the drain in Krishna Nagar for a month.", "latitude": 27.1803, "longitude": 78.0130},
+
+  {"complaint_text": "Traffic signal at Sanjay Place crossing is not working since yesterday.", "latitude": 27.1990, "longitude": 78.0075},
+  {"complaint_text": "Illegal parking near Sadar Bazaar market is blocking the road for 3 days.", "latitude": 27.1960, "longitude": 78.0068},
+  {"complaint_text": "Shopkeepers have encroached the road in Loha Mandi for 2 weeks.", "latitude": 27.1866, "longitude": 78.0125},
+  {"complaint_text": "Severe traffic congestion near Khandari during peak hours since last week.", "latitude": 27.2071, "longitude": 78.0090},
+  {"complaint_text": "Tajganj crossing is jammed every evening for 10 days now.", "latitude": 27.1731, "longitude": 78.0425},
+
+  {"complaint_text": "The park in Dayalbagh is poorly maintained for a month.", "latitude": 27.1830, "longitude": 77.9828},
+  {"complaint_text": "Playground equipment in Shastripuram park is broken and unsafe since last week.", "latitude": 27.2260, "longitude": 78.0618},
+  {"complaint_text": "Overgrown bushes near Balkeshwar are blocking the walking path for 3 weeks.", "latitude": 27.1920, "longitude": 77.9960},
+  {"complaint_text": "Nunhai park is full of litter and plastic waste for 2 weeks.", "latitude": 27.2022, "longitude": 78.0400},
+
+  {"complaint_text": "Loud noise from construction near Rambagh at night for 3 days.", "latitude": 27.1845, "longitude": 78.0360},
+  {"complaint_text": "Pack of aggressive stray dogs near Mantola since yesterday, residents scared.", "latitude": 27.1938, "longitude": 78.0092},
+  {"complaint_text": "Stray cattle blocking the road in Sikandra for 2 days.", "latitude": 27.2308, "longitude": 77.9440},
+  {"complaint_text": "General civic issue reported near Kamla Nagar, unattended for a week.", "latitude": 27.1908, "longitude": 78.0280},
+  {"complaint_text": "something weird is going on outside my house in Trans Yamuna", "latitude": 27.2205, "longitude": 78.0508},
+
+  {"complaint_text": "there's an issue near the market, please check", "latitude": 27.1900, "longitude": 78.0100},
+  {"complaint_text": "problem in my area for many days now", "latitude": 27.1850, "longitude": 78.0200}
+]
