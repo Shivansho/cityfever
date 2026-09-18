@@ -1,0 +1,241 @@
+id,complaint_text,department,issue_type,locality,duration_text,latitude,longitude,status
+C1530,"Frequent sudden Broken Street Light in Connaught Place for 48 hours, appliances getting damaged.",Electrical,Broken Street Light,Connaught Place,48 hours,28.630531,77.214722,Resolved
+C1989,"Major intersection in Saket has Illegal Parking near Railway Crossing, creating chaotic traffic jam.",Traffic,Illegal Parking,Saket,2 weeks,28.525891,77.208006,Manual Review
+C1926,Contaminated foul-smelling water coming from taps in Civil Lines for for past 4 days.,Water,Low Water Pressure,Civil Lines,for past 4 days,28.678636,77.223415,Resolved
+C1413,Stagnant sewer water and Manhole Overflow overflowing onto pavement in Noida Sector 62 for for past 4 days.,Sewage,Manhole Overflow,Noida Sector 62,for past 4 days,28.627892,77.363589,Pending
+C1178,"Massive Dead Animal accumulating near Bus Stand in Saket for 24 hours, terrible stench.",Sanitation,Dead Animal,Saket,24 hours,28.524618,77.20501,Resolved
+C2076,"Drinking water supply in Shahdara has brown smelly Low Water Pressure for 48 hours, health risk to residents.",Water,Low Water Pressure,Shahdara,48 hours,28.673708,77.286207,Pending
+C1400,Choked drainage and Gutter Stagnation outside Metro Station in Rohini Sector 14 for past 2 days.,Sewage,Gutter Stagnation,Rohini Sector 14,2 days,28.717572,77.132699,In Progress
+C1652,Distribution transformer has Transformer Fault sparking continuously near Bus Stand in Indirapuram.,Electrical,Transformer Fault,Indirapuram,3 days,28.641905,77.369426,Resolved
+C2030,"Major intersection in Pitampura has Traffic Signal Down near City Hospital, creating chaotic traffic jam.",Traffic,Traffic Signal Down,Pitampura,48 hours,28.698206,77.138795,Manual Review
+C1132,"Street light pole has Exposed Wire near Main Market in Saket, complete darkness for since last Thursday.",Electrical,Exposed Wire,Saket,since last Thursday,28.526007,77.207179,Pending
+C1440,"Major intersection in Saket has Illegal Parking near Gate 2, creating chaotic traffic jam.",Traffic,Illegal Parking,Saket,almost 10 days,28.525334,77.205505,Resolved
+C1592,Cattle wandering on road causing Stray Animals near Mother Dairy in Karol Bagh.,Other,Stray Animals,Karol Bagh,24 hours,28.650695,77.190574,Resolved
+C2181,Continuous gridlock and Traffic Congestion due to illegal encroaching near Gate 2 in Janakpuri Block B.,Traffic,Traffic Congestion,Janakpuri Block B,2 weeks,28.620345,77.08604,In Progress
+C1821,Open drain with Sewage Blockage causing severe mosquito menace in Indirapuram.,Sewage,Sewage Blockage,Indirapuram,2 weeks,28.642363,77.37135,Pending
+C1053,Sanitation workers haven't cleared Garbage Dump near Post Office in Civil Lines for past almost 10 days.,Sanitation,Garbage Dump,Civil Lines,almost 10 days,28.678877,77.220674,Manual Review
+C1849,"Hazardous live Exposed Wire hanging dangerously low near Govt Senior Secondary School in Shahdara, risk of electric shock.",Electrical,Exposed Wire,Shahdara,since Monday,28.673925,77.289718,Resolved
+C1403,Dense bushes and Park Cleanliness in Pitampura park haven't been trimmed for 2 weeks.,Parks,Park Cleanliness,Pitampura,2 weeks,28.697365,77.138577,Pending
+C1660,"Hazardous live Exposed Wire hanging dangerously low near Metro Station in Krishna Nagar, risk of electric shock.",Electrical,Exposed Wire,Krishna Nagar,2 days,28.65996,77.280387,Resolved
+C1632,Public health emergency due to unattended Overflowing Bin near school gate in Karol Bagh.,Sanitation,Overflowing Bin,Karol Bagh,since last Thursday,28.652136,77.189509,Pending
+C1198,"Community dustbin has Garbage Dump in Shahdara, stray dogs and cows scattering trash everywhere.",Sanitation,Garbage Dump,Shahdara,almost 10 days,28.674525,77.286339,Pending
+C2040,"Street dark and unsafe for women due to Power Outage on 3rd Cross, Lajpat Nagar for since Monday.",Electrical,Power Outage,Lajpat Nagar,since Monday,28.566946,77.244187,Pending
+C1570,"Key traffic junction has Missing Signboard at Noida Sector 62 crossing, accidents happening daily.",Traffic,Missing Signboard,Noida Sector 62,2 weeks,28.628194,77.36344,Resolved
+C2006,"Key traffic junction has Traffic Congestion at Rohini Sector 14 crossing, accidents happening daily.",Traffic,Traffic Congestion,Rohini Sector 14,3 days,28.718138,77.131253,Pending
+C1441,Black foul-smelling Sewage Blockage flooding the main road in Indirapuram for for past 4 days.,Sewage,Sewage Blockage,Indirapuram,for past 4 days,28.640724,77.369661,Pending
+C1586,Pack of aggressive stray dogs causing Public Nuisance near Gate 2 in Mayur Vihar Phase 1.,Other,Public Nuisance,Mayur Vihar Phase 1,almost 10 days,28.607571,77.293852,In Progress
+C1983,Illegal waste and Dead Animal dumped openly beside Post Office in Rohini Sector 14.,Sanitation,Dead Animal,Rohini Sector 14,for past 4 days,28.719651,77.13194,Manual Review
+C1175,"Massive Illegal Dumping accumulating near Main Market in Indirapuram for almost 10 days, terrible stench.",Sanitation,Illegal Dumping,Indirapuram,almost 10 days,28.642378,77.373278,In Progress
+C1344,Dense bushes and Tree Fall Hazard in Mayur Vihar Phase 1 park haven't been trimmed for 5 days.,Parks,Tree Fall Hazard,Mayur Vihar Phase 1,5 days,28.607691,77.295978,Pending
+C1326,Uncovered electrical junction box with Exposed Wire near children's park in Connaught Place.,Electrical,Exposed Wire,Connaught Place,48 hours,28.630164,77.215257,Pending
+C1615,"Massive Dead Animal accumulating near Central Park in Noida Sector 62 for 2 days, terrible stench.",Sanitation,Dead Animal,Noida Sector 62,2 days,28.628193,77.36395,Pending
+C1760,"Heavy rain created a massive Pothole in Mayur Vihar Phase 1, risk of fatal accidents at night.",Roads,Pothole,Mayur Vihar Phase 1,for past 4 days,28.606863,77.294866,In Progress
+C1840,Unauthorized commercial establishment causing Noise Pollution late night in Shahdara for 24 hours.,Other,Noise Pollution,Shahdara,24 hours,28.673806,77.289669,Resolved
+C2127,Illegal waste and Overflowing Bin dumped openly beside Community Center in Saket.,Sanitation,Overflowing Bin,Saket,3 days,28.524084,77.2068,Resolved
+C1837,Public health emergency due to unattended Dead Animal near school gate in Connaught Place.,Sanitation,Dead Animal,Connaught Place,48 hours,28.630454,77.2153,Pending
+C2085,Old banyan tree has Overgrown Vegetation leaning over pedestrian pathway near Railway Crossing in Mayur Vihar Phase 1.,Parks,Overgrown Vegetation,Mayur Vihar Phase 1,for past 4 days,28.610163,77.293616,Resolved
+C2022,"Manhole lid broken with Sewage Overflow near school in Janakpuri Block B, life-threatening for children.",Sewage,Sewage Overflow,Janakpuri Block B,5 days,28.62021,77.088854,In Progress
+C1810,Cattle wandering on road causing Stray Animals near Community Center in Indirapuram.,Other,Stray Animals,Indirapuram,48 hours,28.640255,77.369678,Resolved
+C1158,Missing directional signboard and Illegal Parking near Police Station in Noida Sector 62.,Traffic,Illegal Parking,Noida Sector 62,24 hours,28.626353,77.366278,Pending
+C1027,"Drinking water supply in Indirapuram has brown smelly Water Contamination for since Monday, health risk to residents.",Water,Water Contamination,Indirapuram,since Monday,28.640355,77.371004,Pending
+C2024,"Heavy rain created a massive Pothole in Janakpuri Block B, risk of fatal accidents at night.",Roads,Pothole,Janakpuri Block B,since Monday,28.62011,77.085819,Resolved
+C2046,"Key traffic junction has Traffic Congestion at Pitampura crossing, accidents happening daily.",Traffic,Traffic Congestion,Pitampura,48 hours,28.700882,77.137893,In Progress
+C2008,Pack of aggressive stray dogs causing Noise Pollution near Metro Station in Rohini Sector 14.,Other,Noise Pollution,Rohini Sector 14,48 hours,28.717135,77.131432,In Progress
+C2160,"Dangerous Road Damage near Metro Station in Vasant Kunj for 2 weeks, multiple bike slips reported.",Roads,Road Damage,Vasant Kunj,2 weeks,28.527871,77.15441,Pending
+C1922,Contaminated foul-smelling water coming from taps in Lajpat Nagar for 2 weeks.,Water,Water Leakage,Lajpat Nagar,2 weeks,28.56799,77.241321,Pending
+C1005,Stagnant sewer water and Sewage Overflow overflowing onto pavement in Noida Sector 62 for 3 days.,Sewage,Sewage Overflow,Noida Sector 62,3 days,28.629892,77.364414,In Progress
+C1248,"Broken boundary wall and Tree Fall Hazard in municipal garden, Lajpat Nagar.",Parks,Tree Fall Hazard,Lajpat Nagar,2 weeks,28.56717,77.242183,Manual Review
+C1690,Illegal waste and Overflowing Bin dumped openly beside Community Center in Civil Lines.,Sanitation,Overflowing Bin,Civil Lines,48 hours,28.678862,77.222089,Pending
+C1425,Open drain with Gutter Stagnation causing severe mosquito menace in Pitampura.,Sewage,Gutter Stagnation,Pitampura,24 hours,28.698836,77.137273,Pending
+C2034,"Urgent repair needed for Pothole near Police Station, road surface completely broken.",Roads,Pothole,Rohini Sector 14,48 hours,28.719029,77.132979,Pending
+C1815,Dense bushes and Tree Fall Hazard in Saket park haven't been trimmed for 48 hours.,Parks,Tree Fall Hazard,Saket,48 hours,28.52635,77.206646,Pending
+C2131,Sanitation workers haven't cleared Overflowing Bin near Metro Station in Vasant Kunj for past 2 weeks.,Sanitation,Overflowing Bin,Vasant Kunj,2 weeks,28.531277,77.152889,Resolved
+C2158,Dense bushes and Broken Bench in Pitampura park haven't been trimmed for 48 hours.,Parks,Broken Bench,Pitampura,48 hours,28.697401,77.138507,Resolved
+C1315,Cattle wandering on road causing Public Nuisance near Central Park in Indirapuram.,Other,Public Nuisance,Indirapuram,48 hours,28.641848,77.370792,Resolved
+C1271,Open drain with Manhole Overflow causing severe mosquito menace in Civil Lines.,Sewage,Manhole Overflow,Civil Lines,24 hours,28.677634,77.221739,Resolved
+C1675,"Drinking water supply in Karol Bagh has brown smelly Low Water Pressure for 3 days, health risk to residents.",Water,Low Water Pressure,Karol Bagh,3 days,28.649461,77.191192,In Progress
+C1901,Open drain with Sewage Blockage causing severe mosquito menace in Mayur Vihar Phase 1.,Sewage,Sewage Blockage,Mayur Vihar Phase 1,1 week,28.608731,77.295751,In Progress
+C1275,Loudspeakers and industrial machinery causing unbearable Encroachment in residential Karol Bagh for 24 hours.,Other,Encroachment,Karol Bagh,24 hours,28.650077,77.191581,In Progress
+C2137,Large Pothole right in front of Main Market in Janakpuri Block B. Please fix immediately.,Roads,Pothole,Janakpuri Block B,1 week,28.621041,77.086921,In Progress
+C1520,"Key traffic junction has Traffic Signal Down at Saket crossing, accidents happening daily.",Traffic,Traffic Signal Down,Saket,since Monday,28.523243,77.205245,Resolved
+C1230,Public walkway encroached by shops causing Noise Pollution in Karol Bagh for 1 week.,Other,Noise Pollution,Karol Bagh,1 week,28.651644,77.192692,In Progress
+C1801,Unauthorized commercial establishment causing Encroachment late night in Rohini Sector 14 for 2 days.,Other,Encroachment,Rohini Sector 14,2 days,28.719172,77.132554,Pending
+C1384,"The road in Connaught Place has an unrepaired Missing Manhole Cover for for past 4 days, vehicles are getting damaged.",Roads,Missing Manhole Cover,Connaught Place,for past 4 days,28.633293,77.218047,Resolved
+C2156,"Community dustbin has Illegal Dumping in Shahdara, stray dogs and cows scattering trash everywhere.",Sanitation,Illegal Dumping,Shahdara,1 week,28.673679,77.289973,Pending
+C1016,"Community dustbin has Dead Animal in Civil Lines, stray dogs and cows scattering trash everywhere.",Sanitation,Dead Animal,Civil Lines,since last Thursday,28.680074,77.222696,In Progress
+C1811,Pack of aggressive stray dogs causing Public Nuisance near Post Office in Krishna Nagar.,Other,Public Nuisance,Krishna Nagar,since Monday,28.660788,77.278785,In Progress
+C1846,Illegal waste and Dead Animal dumped openly beside Main Market in Janakpuri Block B.,Sanitation,Dead Animal,Janakpuri Block B,2 weeks,28.619984,77.089667,In Progress
+C1951,Illegal waste and Dead Animal dumped openly beside Central Park in Rohini Sector 14.,Sanitation,Dead Animal,Rohini Sector 14,since last Thursday,28.71983,77.131773,In Progress
+C1719,Stagnant sewer water and Manhole Overflow overflowing onto pavement in Pitampura for 24 hours.,Sewage,Manhole Overflow,Pitampura,24 hours,28.698029,77.139523,Pending
+C1255,"Severe Water Leakage observed near Bus Stand in Pitampura, clean drinking water being wasted for 2 days.",Water,Water Leakage,Pitampura,2 days,28.698148,77.13712,Pending
+C1962,Large Missing Manhole Cover right in front of Bus Stand in Civil Lines. Please fix immediately.,Roads,Missing Manhole Cover,Civil Lines,2 days,28.680152,77.222864,Resolved
+C1401,There is a deep Missing Manhole Cover on Indirapuram Main Road causing severe traffic congestion.,Roads,Missing Manhole Cover,Indirapuram,2 weeks,28.642796,77.3719,In Progress
+C2162,Illegal temporary stalls and Stray Animals blocking the walkway in Mayur Vihar Phase 1.,Other,Stray Animals,Mayur Vihar Phase 1,5 days,28.607675,77.295574,Pending
+C1781,Commercial vehicles and cabs doing Traffic Congestion on narrow road in Janakpuri Block B for 24 hours.,Traffic,Traffic Congestion,Janakpuri Block B,24 hours,28.621444,77.085849,Pending
+C1932,"Major intersection in Indirapuram has Traffic Signal Down near Bus Stand, creating chaotic traffic jam.",Traffic,Traffic Signal Down,Indirapuram,for past 4 days,28.640739,77.371209,Pending
+C2186,Commercial vehicles and cabs doing Traffic Congestion on narrow road in Dwarka Sector 6 for 3 days.,Traffic,Traffic Congestion,Dwarka Sector 6,3 days,28.580611,77.061013,Resolved
+C2144,Cattle wandering on road causing Encroachment near Mother Dairy in Pitampura.,Other,Encroachment,Pitampura,2 days,28.697668,77.137497,Manual Review
+C1862,Illegal temporary stalls and Stray Animals blocking the walkway in Connaught Place.,Other,Stray Animals,Connaught Place,almost 10 days,28.631333,77.214741,Pending
+C1594,"Public park in Connaught Place has Broken Bench for for past 4 days, unsafe for walking.",Parks,Broken Bench,Connaught Place,for past 4 days,28.630455,77.217584,In Progress
+C1067,Illegal temporary stalls and Public Nuisance blocking the walkway in Vasant Kunj.,Other,Public Nuisance,Vasant Kunj,2 weeks,28.530308,77.155228,Pending
+C2031,Underground Water Contamination near Central Park causing street flooding in Lajpat Nagar.,Water,Water Contamination,Lajpat Nagar,24 hours,28.569626,77.244085,In Progress
+C1910,"Manhole lid broken with Manhole Overflow near school in Noida Sector 62, life-threatening for children.",Sewage,Manhole Overflow,Noida Sector 62,3 days,28.626617,77.364355,Resolved
+C1205,"Hazardous live Power Outage hanging dangerously low near Bus Stand in Vasant Kunj, risk of electric shock.",Electrical,Power Outage,Vasant Kunj,2 days,28.528744,77.154189,In Progress
+C2017,No drinking water received in Indirapuram due to Water Contamination since last since last Thursday.,Water,Water Contamination,Indirapuram,since last Thursday,28.639985,77.370875,Resolved
+C2048,"Manhole lid broken with Gutter Stagnation near school in Janakpuri Block B, life-threatening for children.",Sewage,Gutter Stagnation,Janakpuri Block B,almost 10 days,28.622654,77.088586,In Progress
+C1843,Underground Low Water Pressure near Central Park causing street flooding in Shahdara.,Water,Low Water Pressure,Shahdara,48 hours,28.674623,77.289176,Resolved
+C2129,Sanitation workers haven't cleared Overflowing Bin near Gate 2 in Civil Lines for past almost 10 days.,Sanitation,Overflowing Bin,Civil Lines,almost 10 days,28.677346,77.223013,Pending
+C1184,Choked drainage and Sewage Blockage outside Gate 2 in Lajpat Nagar for past 1 week.,Sewage,Sewage Blockage,Lajpat Nagar,1 week,28.567379,77.244476,In Progress
+C1213,"Underground sewer line has Manhole Overflow near Railway Crossing in Vasant Kunj, water entering ground floor homes.",Sewage,Manhole Overflow,Vasant Kunj,almost 10 days,28.528924,77.153714,In Progress
+C1180,No drinking water received in Pitampura due to Water Contamination since last 2 days.,Water,Water Contamination,Pitampura,2 days,28.69866,77.137986,Pending
+C1204,"Underground sewer line has Gutter Stagnation near Police Station in Janakpuri Block B, water entering ground floor homes.",Sewage,Gutter Stagnation,Janakpuri Block B,almost 10 days,28.620596,77.087246,Pending
+C1581,Loudspeakers and industrial machinery causing unbearable Public Nuisance in residential Janakpuri Block B for 2 days.,Other,Public Nuisance,Janakpuri Block B,2 days,28.621221,77.089174,Manual Review
+C1896,Illegal waste and Illegal Dumping dumped openly beside Gate 2 in Noida Sector 62.,Sanitation,Illegal Dumping,Noida Sector 62,since Monday,28.628341,77.363705,In Progress
+C1584,"Heavy rain created a massive Road Damage in Janakpuri Block B, risk of fatal accidents at night.",Roads,Road Damage,Janakpuri Block B,3 days,28.621985,77.089728,In Progress
+C1782,"Manhole lid broken with Manhole Overflow near school in Lajpat Nagar, life-threatening for children.",Sewage,Manhole Overflow,Lajpat Nagar,since Monday,28.568666,77.242962,Pending
+C1893,"Underground sewer line has Sewage Overflow near Gate 2 in Karol Bagh, water entering ground floor homes.",Sewage,Sewage Overflow,Karol Bagh,1 week,28.649848,77.188764,Manual Review
+C1334,Choked drainage and Gutter Stagnation outside Mother Dairy in Mayur Vihar Phase 1 for past for past 4 days.,Sewage,Gutter Stagnation,Mayur Vihar Phase 1,for past 4 days,28.607222,77.29681,Resolved
+C1363,"Street light pole has Power Outage near Pillar 45 in Pitampura, complete darkness for 2 days.",Electrical,Power Outage,Pitampura,2 days,28.697932,77.137786,Resolved
+C1765,No drinking water received in Lajpat Nagar due to Water Contamination since last 48 hours.,Water,Water Contamination,Lajpat Nagar,48 hours,28.569292,77.242453,Manual Review
+C2123,"Street dark and unsafe for women due to Broken Street Light on 3rd Cross, Civil Lines for 48 hours.",Electrical,Broken Street Light,Civil Lines,48 hours,28.676895,77.22225,Pending
+C2101,"Dangerous Road Damage near City Hospital in Dwarka Sector 6 for 5 days, multiple bike slips reported.",Roads,Road Damage,Dwarka Sector 6,5 days,28.582709,77.059464,Pending
+C2139,Sanitation workers haven't cleared Dead Animal near Railway Crossing in Janakpuri Block B for past 24 hours.,Sanitation,Dead Animal,Janakpuri Block B,24 hours,28.622872,77.088156,In Progress
+C2114,Continuous gridlock and Traffic Signal Down due to illegal encroaching near Metro Station in Lajpat Nagar.,Traffic,Traffic Signal Down,Lajpat Nagar,1 week,28.569479,77.24196,Pending
+C1688,Heavy storm caused Overgrown Vegetation blocking the entrance of Lajpat Nagar park near Post Office.,Parks,Overgrown Vegetation,Lajpat Nagar,for past 4 days,28.568785,77.242816,In Progress
+C1873,Public health emergency due to unattended Overflowing Bin near school gate in Civil Lines.,Sanitation,Overflowing Bin,Civil Lines,for past 4 days,28.679964,77.222643,In Progress
+C1722,Distribution transformer has Broken Street Light sparking continuously near Community Center in Janakpuri Block B.,Electrical,Broken Street Light,Janakpuri Block B,3 days,28.620039,77.086082,Resolved
+C1721,Cattle wandering on road causing Stray Animals near Govt Senior Secondary School in Indirapuram.,Other,Stray Animals,Indirapuram,almost 10 days,28.641468,77.369975,Resolved
+C1841,"Broken boundary wall and Tree Fall Hazard in municipal garden, Saket.",Parks,Tree Fall Hazard,Saket,48 hours,28.526173,77.207497,Pending
+C1848,No drinking water received in Indirapuram due to Water Contamination since last 48 hours.,Water,Water Contamination,Indirapuram,48 hours,28.64321,77.373072,Pending
+C1934,Pack of aggressive stray dogs causing Encroachment near Police Station in Shahdara.,Other,Encroachment,Shahdara,24 hours,28.671757,77.288699,In Progress
+C2099,"Urgent repair needed for Road Damage near Mother Dairy, road surface completely broken.",Roads,Road Damage,Krishna Nagar,2 weeks,28.660737,77.27898,In Progress
+C1256,Dense bushes and Tree Fall Hazard in Noida Sector 62 park haven't been trimmed for 48 hours.,Parks,Tree Fall Hazard,Noida Sector 62,48 hours,28.626321,77.366757,Resolved
+C2029,"Key traffic junction has Traffic Signal Down at Rohini Sector 14 crossing, accidents happening daily.",Traffic,Traffic Signal Down,Rohini Sector 14,1 week,28.716264,77.13376,In Progress
+C1629,"Heavy rain created a massive Missing Manhole Cover in Pitampura, risk of fatal accidents at night.",Roads,Missing Manhole Cover,Pitampura,since last Thursday,28.700796,77.137302,Pending
+C1619,"Uncollected garbage and Dead Animal rotting in Shahdara for since Monday, breeding mosquitoes.",Sanitation,Dead Animal,Shahdara,since Monday,28.673893,77.287962,Resolved
+C1034,No drinking water received in Connaught Place due to Water Leakage since last 3 days.,Water,Water Leakage,Connaught Place,3 days,28.629793,77.215553,Pending
+C1746,Loudspeakers and industrial machinery causing unbearable Public Nuisance in residential Rohini Sector 14 for almost 10 days.,Other,Public Nuisance,Rohini Sector 14,almost 10 days,28.719593,77.13142,Pending
+C1759,"Street dark and unsafe for women due to Broken Street Light on 3rd Cross, Pitampura for 2 days.",Electrical,Broken Street Light,Pitampura,2 days,28.699059,77.14004,Pending
+C2103,Contaminated foul-smelling water coming from taps in Indirapuram for 5 days.,Water,Low Water Pressure,Indirapuram,5 days,28.641644,77.369682,Resolved
+C1392,"Drinking water supply in Mayur Vihar Phase 1 has brown smelly Pipeline Burst for 3 days, health risk to residents.",Water,Pipeline Burst,Mayur Vihar Phase 1,3 days,28.607652,77.29733,Pending
+C1430,Dense bushes and Park Cleanliness in Janakpuri Block B park haven't been trimmed for for past 4 days.,Parks,Park Cleanliness,Janakpuri Block B,for past 4 days,28.622732,77.088088,Pending
+C1713,Missing directional signboard and Traffic Congestion near Post Office in Pitampura.,Traffic,Traffic Congestion,Pitampura,2 weeks,28.69834,77.137468,Pending
+C1443,Auto-rickshaws blocking entry with Traffic Congestion outside City Hospital in Vasant Kunj.,Traffic,Traffic Congestion,Vasant Kunj,5 days,28.531092,77.155573,Pending
+C1774,Auto-rickshaws blocking entry with Illegal Parking outside Mother Dairy in Noida Sector 62.,Traffic,Illegal Parking,Noida Sector 62,5 days,28.628135,77.363386,Pending
+C1341,Underground Water Leakage near Community Center causing street flooding in Mayur Vihar Phase 1.,Water,Water Leakage,Mayur Vihar Phase 1,5 days,28.608231,77.296653,Resolved
+C1861,"Hazardous live Transformer Fault hanging dangerously low near Railway Crossing in Indirapuram, risk of electric shock.",Electrical,Transformer Fault,Indirapuram,5 days,28.639615,77.373305,Pending
+C1385,Pack of aggressive stray dogs causing Public Nuisance near Gate 2 in Noida Sector 62.,Other,Public Nuisance,Noida Sector 62,3 days,28.626225,77.365307,Pending
+C1448,Open drain with Sewage Blockage causing severe mosquito menace in Shahdara.,Sewage,Sewage Blockage,Shahdara,since last Thursday,28.674275,77.286671,Pending
+C1075,Loudspeakers and industrial machinery causing unbearable Stray Animals in residential Karol Bagh for since last Thursday.,Other,Stray Animals,Karol Bagh,since last Thursday,28.653262,77.18978,Resolved
+C1200,Cattle wandering on road causing Noise Pollution near Mother Dairy in Karol Bagh.,Other,Noise Pollution,Karol Bagh,24 hours,28.650992,77.191298,Pending
+C1921,"Manhole lid broken with Manhole Overflow near school in Lajpat Nagar, life-threatening for children.",Sewage,Manhole Overflow,Lajpat Nagar,2 days,28.569066,77.242339,In Progress
+C1258,"Urgent repair needed for Pothole near Post Office, road surface completely broken.",Roads,Pothole,Noida Sector 62,since last Thursday,28.627697,77.364417,Pending
+C1923,"Frequent sudden Power Outage in Dwarka Sector 6 for almost 10 days, appliances getting damaged.",Electrical,Power Outage,Dwarka Sector 6,almost 10 days,28.583439,77.061459,In Progress
+C1008,"Manhole lid broken with Sewage Overflow near school in Saket, life-threatening for children.",Sewage,Sewage Overflow,Saket,since last Thursday,28.525317,77.205254,Pending
+C2067,No drinking water received in Pitampura due to Low Water Pressure since last almost 10 days.,Water,Low Water Pressure,Pitampura,almost 10 days,28.700428,77.140021,Resolved
+C2200,Sanitation workers haven't cleared Illegal Dumping near Central Park in Civil Lines for past 24 hours.,Sanitation,Illegal Dumping,Civil Lines,24 hours,28.677895,77.223029,In Progress
+C1833,Distribution transformer has Transformer Fault sparking continuously near Central Park in Dwarka Sector 6.,Electrical,Transformer Fault,Dwarka Sector 6,since last Thursday,28.582113,77.061654,Pending
+C1233,Stagnant sewer water and Sewage Blockage overflowing onto pavement in Janakpuri Block B for 24 hours.,Sewage,Sewage Blockage,Janakpuri Block B,24 hours,28.621819,77.088042,Resolved
+C2104,"Street dark and unsafe for women due to Exposed Wire on 3rd Cross, Saket for since last Thursday.",Electrical,Exposed Wire,Saket,since last Thursday,28.52482,77.206279,Pending
+C2023,Sanitation workers haven't cleared Illegal Dumping near City Hospital in Karol Bagh for past 2 days.,Sanitation,Illegal Dumping,Karol Bagh,2 days,28.652971,77.190829,Pending
+C1303,Dense bushes and Overgrown Vegetation in Connaught Place park haven't been trimmed for for past 4 days.,Parks,Overgrown Vegetation,Connaught Place,for past 4 days,28.631103,77.216726,Resolved
+C1940,Commercial vehicles and cabs doing Traffic Congestion on narrow road in Indirapuram for since last Thursday.,Traffic,Traffic Congestion,Indirapuram,since last Thursday,28.64077,77.370429,Pending
+C1309,Open drain with Gutter Stagnation causing severe mosquito menace in Vasant Kunj.,Sewage,Gutter Stagnation,Vasant Kunj,since last Thursday,28.529232,77.153805,Pending
+C1030,"The road in Noida Sector 62 has an unrepaired Pothole for since last Thursday, vehicles are getting damaged.",Roads,Pothole,Noida Sector 62,since last Thursday,28.62663,77.366743,Pending
+C1649,"Community dustbin has Overflowing Bin in Karol Bagh, stray dogs and cows scattering trash everywhere.",Sanitation,Overflowing Bin,Karol Bagh,2 days,28.651078,77.189938,Resolved
+C1664,Continuous gridlock and Missing Signboard due to illegal encroaching near Bus Stand in Noida Sector 62.,Traffic,Missing Signboard,Noida Sector 62,2 days,28.628583,77.364826,In Progress
+C1297,Loudspeakers and industrial machinery causing unbearable Stray Animals in residential Lajpat Nagar for 2 weeks.,Other,Stray Animals,Lajpat Nagar,2 weeks,28.565727,77.242883,Resolved
+C1160,Underground Water Contamination near Police Station causing street flooding in Mayur Vihar Phase 1.,Water,Water Contamination,Mayur Vihar Phase 1,almost 10 days,28.60996,77.294345,Pending
+C2119,"Massive Dead Animal accumulating near Post Office in Mayur Vihar Phase 1 for 1 week, terrible stench.",Sanitation,Dead Animal,Mayur Vihar Phase 1,1 week,28.610027,77.296803,Resolved
+C1021,"Street light pole has Power Outage near Police Station in Lajpat Nagar, complete darkness for almost 10 days.",Electrical,Power Outage,Lajpat Nagar,almost 10 days,28.565935,77.24157,Pending
+C1797,No drinking water received in Pitampura due to Pipeline Burst since last 3 days.,Water,Pipeline Burst,Pitampura,3 days,28.700275,77.140094,In Progress
+C1727,"Key traffic junction has Traffic Signal Down at Vasant Kunj crossing, accidents happening daily.",Traffic,Traffic Signal Down,Vasant Kunj,2 weeks,28.529891,77.152606,Pending
+C1895,"Frequent sudden Broken Street Light in Vasant Kunj for 5 days, appliances getting damaged.",Electrical,Broken Street Light,Vasant Kunj,5 days,28.529196,77.151987,Pending
+C1330,Continuous gridlock and Illegal Parking due to illegal encroaching near Bus Stand in Indirapuram.,Traffic,Illegal Parking,Indirapuram,5 days,28.64181,77.370475,Pending
+C2097,Unauthorized commercial establishment causing Public Nuisance late night in Krishna Nagar for for past 4 days.,Other,Public Nuisance,Krishna Nagar,for past 4 days,28.658925,77.277845,In Progress
+C1974,Uncovered electrical junction box with Power Outage near children's park in Civil Lines.,Electrical,Power Outage,Civil Lines,24 hours,28.678084,77.223198,Pending
+C1987,"Public park in Karol Bagh has Overgrown Vegetation for 1 week, unsafe for walking.",Parks,Overgrown Vegetation,Karol Bagh,1 week,28.650167,77.190213,Pending
+C1859,Unauthorized commercial establishment causing Encroachment late night in Rohini Sector 14 for 1 week.,Other,Encroachment,Rohini Sector 14,1 week,28.716762,77.133948,Resolved
+C1716,Underground Pipeline Burst near Police Station causing street flooding in Rohini Sector 14.,Water,Pipeline Burst,Rohini Sector 14,2 weeks,28.717008,77.130636,In Progress
+C1407,"Frequent sudden Transformer Fault in Lajpat Nagar for 2 days, appliances getting damaged.",Electrical,Transformer Fault,Lajpat Nagar,2 days,28.567708,77.244902,Resolved
+C1337,Stagnant sewer water and Sewage Overflow overflowing onto pavement in Mayur Vihar Phase 1 for 3 days.,Sewage,Sewage Overflow,Mayur Vihar Phase 1,3 days,28.608187,77.297015,Pending
+C1609,"Frequent sudden Power Outage in Vasant Kunj for 3 days, appliances getting damaged.",Electrical,Power Outage,Vasant Kunj,3 days,28.529582,77.154176,Pending
+C1701,Illegal waste and Dead Animal dumped openly beside Metro Station in Civil Lines.,Sanitation,Dead Animal,Civil Lines,since last Thursday,28.67996,77.220654,In Progress
+C1878,"Massive Overflowing Bin accumulating near Post Office in Vasant Kunj for 2 weeks, terrible stench.",Sanitation,Overflowing Bin,Vasant Kunj,2 weeks,28.528593,77.152122,Pending
+C1190,Public walkway encroached by shops causing Encroachment in Karol Bagh for 5 days.,Other,Encroachment,Karol Bagh,5 days,28.649652,77.191805,In Progress
+C2145,"Manhole lid broken with Sewage Overflow near school in Krishna Nagar, life-threatening for children.",Sewage,Sewage Overflow,Krishna Nagar,1 week,28.661063,77.27879,In Progress
+C1377,Unauthorized commercial establishment causing Stray Animals late night in Connaught Place for for past 4 days.,Other,Stray Animals,Connaught Place,for past 4 days,28.630483,77.21588,Pending
+C1532,No drinking water received in Saket due to Water Contamination since last 2 weeks.,Water,Water Contamination,Saket,2 weeks,28.523445,77.206744,In Progress
+C1439,Dense bushes and Park Cleanliness in Krishna Nagar park haven't been trimmed for since last Thursday.,Parks,Park Cleanliness,Krishna Nagar,since last Thursday,28.658898,77.278692,Pending
+C2075,Choked drainage and Sewage Overflow outside Metro Station in Lajpat Nagar for past 3 days.,Sewage,Sewage Overflow,Lajpat Nagar,3 days,28.567061,77.243669,Pending
+C1860,Open drain with Manhole Overflow causing severe mosquito menace in Karol Bagh.,Sewage,Manhole Overflow,Karol Bagh,1 week,28.6518,77.192681,Pending
+C1925,Illegal waste and Illegal Dumping dumped openly beside Metro Station in Lajpat Nagar.,Sanitation,Illegal Dumping,Lajpat Nagar,2 days,28.5674,77.24182,Pending
+C1611,There is a deep Footpath Damage on Vasant Kunj Main Road causing severe traffic congestion.,Roads,Footpath Damage,Vasant Kunj,24 hours,28.528692,77.155169,Pending
+C1168,Auto-rickshaws blocking entry with Missing Signboard outside Pillar 45 in Indirapuram.,Traffic,Missing Signboard,Indirapuram,24 hours,28.642216,77.369609,In Progress
+C1830,Underground Water Contamination near Gate 2 causing street flooding in Dwarka Sector 6.,Water,Water Contamination,Dwarka Sector 6,2 weeks,28.584285,77.060208,Pending
+C1561,Black foul-smelling Gutter Stagnation flooding the main road in Indirapuram for 24 hours.,Sewage,Gutter Stagnation,Indirapuram,24 hours,28.642969,77.373252,Pending
+C1142,No drinking water received in Noida Sector 62 due to Water Contamination since last 48 hours.,Water,Water Contamination,Noida Sector 62,48 hours,28.627356,77.364714,Pending
+C1291,Sanitation workers haven't cleared Illegal Dumping near Metro Station in Mayur Vihar Phase 1 for past 3 days.,Sanitation,Illegal Dumping,Mayur Vihar Phase 1,3 days,28.606721,77.294633,Pending
+C1172,Public health emergency due to unattended Garbage Dump near school gate in Saket.,Sanitation,Garbage Dump,Saket,since last Thursday,28.523847,77.20605,Pending
+C1361,Choked drainage and Gutter Stagnation outside Mother Dairy in Lajpat Nagar for past since Monday.,Sewage,Gutter Stagnation,Lajpat Nagar,since Monday,28.565732,77.242103,In Progress
+C1517,No drinking water received in Pitampura due to Low Water Pressure since last since last Thursday.,Water,Low Water Pressure,Pitampura,since last Thursday,28.698623,77.139669,Pending
+C1553,Heavy storm caused Park Cleanliness blocking the entrance of Krishna Nagar park near Mother Dairy.,Parks,Park Cleanliness,Krishna Nagar,24 hours,28.659675,77.279945,Pending
+C1867,Commercial vehicles and cabs doing Traffic Congestion on narrow road in Dwarka Sector 6 for 24 hours.,Traffic,Traffic Congestion,Dwarka Sector 6,24 hours,28.580477,77.059111,Resolved
+C1047,"Broken boundary wall and Tree Fall Hazard in municipal garden, Vasant Kunj.",Parks,Tree Fall Hazard,Vasant Kunj,48 hours,28.529725,77.153946,Pending
+C1434,Black foul-smelling Manhole Overflow flooding the main road in Noida Sector 62 for almost 10 days.,Sewage,Manhole Overflow,Noida Sector 62,almost 10 days,28.628334,77.366677,Pending
+C1111,"Key traffic junction has Traffic Signal Down at Lajpat Nagar crossing, accidents happening daily.",Traffic,Traffic Signal Down,Lajpat Nagar,since Monday,28.565761,77.241877,Resolved
+C2154,"Hazardous live Transformer Fault hanging dangerously low near Community Center in Mayur Vihar Phase 1, risk of electric shock.",Electrical,Transformer Fault,Mayur Vihar Phase 1,1 week,28.609027,77.296631,Resolved
+C1970,"The road in Saket has an unrepaired Missing Manhole Cover for 3 days, vehicles are getting damaged.",Roads,Missing Manhole Cover,Saket,3 days,28.522807,77.204823,Pending
+C1881,Open drain with Manhole Overflow causing severe mosquito menace in Janakpuri Block B.,Sewage,Manhole Overflow,Janakpuri Block B,2 weeks,28.623515,77.088214,Pending
+C1741,Underground Low Water Pressure near Gate 2 causing street flooding in Indirapuram.,Water,Low Water Pressure,Indirapuram,since last Thursday,28.640443,77.36987,In Progress
+C1128,Continuous gridlock and Illegal Parking due to illegal encroaching near Post Office in Lajpat Nagar.,Traffic,Illegal Parking,Lajpat Nagar,since Monday,28.569338,77.242509,Pending
+C1779,"Frequent sudden Power Outage in Rohini Sector 14 for 3 days, appliances getting damaged.",Electrical,Power Outage,Rohini Sector 14,3 days,28.718154,77.132282,In Progress
+C1065,Dense bushes and Broken Bench in Pitampura park haven't been trimmed for for past 4 days.,Parks,Broken Bench,Pitampura,for past 4 days,28.699136,77.140028,In Progress
+C1656,Dense bushes and Overgrown Vegetation in Shahdara park haven't been trimmed for 3 days.,Parks,Overgrown Vegetation,Shahdara,3 days,28.672571,77.286738,In Progress
+C1438,Illegal waste and Overflowing Bin dumped openly beside Railway Crossing in Vasant Kunj.,Sanitation,Overflowing Bin,Vasant Kunj,3 days,28.527818,77.153635,Pending
+C1299,"Frequent sudden Transformer Fault in Karol Bagh for 24 hours, appliances getting damaged.",Electrical,Transformer Fault,Karol Bagh,24 hours,28.650566,77.19148,In Progress
+C1963,"Heavy rain created a massive Missing Manhole Cover in Shahdara, risk of fatal accidents at night.",Roads,Missing Manhole Cover,Shahdara,2 weeks,28.671887,77.288273,In Progress
+C1319,"Underground sewer line has Sewage Blockage near Bus Stand in Mayur Vihar Phase 1, water entering ground floor homes.",Sewage,Sewage Blockage,Mayur Vihar Phase 1,for past 4 days,28.606914,77.294836,Pending
+C2117,"Street dark and unsafe for women due to Broken Street Light on 3rd Cross, Noida Sector 62 for almost 10 days.",Electrical,Broken Street Light,Noida Sector 62,almost 10 days,28.629721,77.365955,Resolved
+C1079,"Manhole lid broken with Sewage Overflow near school in Rohini Sector 14, life-threatening for children.",Sewage,Sewage Overflow,Rohini Sector 14,1 week,28.71888,77.132454,Resolved
+C1931,Children play area has damaged swings and Overgrown Vegetation in Pitampura municipal park.,Parks,Overgrown Vegetation,Pitampura,1 week,28.697732,77.139359,Pending
+C1571,Public health emergency due to unattended Illegal Dumping near school gate in Janakpuri Block B.,Sanitation,Illegal Dumping,Janakpuri Block B,for past 4 days,28.62164,77.088359,In Progress
+C1235,"Massive Dead Animal accumulating near Police Station in Dwarka Sector 6 for 3 days, terrible stench.",Sanitation,Dead Animal,Dwarka Sector 6,3 days,28.581685,77.06037,Pending
+C1976,Missing directional signboard and Missing Signboard near Mother Dairy in Pitampura.,Traffic,Missing Signboard,Pitampura,5 days,28.69759,77.137635,Pending
+C1436,Distribution transformer has Exposed Wire sparking continuously near Bus Stand in Connaught Place.,Electrical,Exposed Wire,Connaught Place,5 days,28.630766,77.217563,Resolved
+C1996,Illegal temporary stalls and Public Nuisance blocking the walkway in Indirapuram.,Other,Public Nuisance,Indirapuram,5 days,28.641267,77.370462,Pending
+C1702,"Major Low Water Pressure on the main line near Main Market in Krishna Nagar, whole sector affected.",Water,Low Water Pressure,Krishna Nagar,since last Thursday,28.661214,77.279075,In Progress
+C1650,Public walkway encroached by shops causing Public Nuisance in Karol Bagh for 5 days.,Other,Public Nuisance,Karol Bagh,5 days,28.653242,77.188714,Resolved
+C1133,Black foul-smelling Sewage Blockage flooding the main road in Shahdara for 3 days.,Sewage,Sewage Blockage,Shahdara,3 days,28.674051,77.288767,In Progress
+C1674,Choked drainage and Sewage Blockage outside City Hospital in Rohini Sector 14 for past 2 weeks.,Sewage,Sewage Blockage,Rohini Sector 14,2 weeks,28.717107,77.131777,Pending
+C1823,Children play area has damaged swings and Tree Fall Hazard in Mayur Vihar Phase 1 municipal park.,Parks,Tree Fall Hazard,Mayur Vihar Phase 1,2 days,28.609062,77.293913,Pending
+C1409,"Broken boundary wall and Broken Bench in municipal garden, Karol Bagh.",Parks,Broken Bench,Karol Bagh,2 weeks,28.650679,77.191608,Resolved
+C1888,"Severe Water Leakage observed near Post Office in Janakpuri Block B, clean drinking water being wasted for since Monday.",Water,Water Leakage,Janakpuri Block B,since Monday,28.620618,77.086529,Pending
+C1813,Sanitation workers haven't cleared Garbage Dump near Main Market in Rohini Sector 14 for past 1 week.,Sanitation,Garbage Dump,Rohini Sector 14,1 week,28.71838,77.134463,Pending
+C1222,"Underground sewer line has Sewage Overflow near Pillar 45 in Lajpat Nagar, water entering ground floor homes.",Sewage,Sewage Overflow,Lajpat Nagar,24 hours,28.56888,77.242656,Resolved
+C1370,"Frequent sudden Transformer Fault in Noida Sector 62 for 3 days, appliances getting damaged.",Electrical,Transformer Fault,Noida Sector 62,3 days,28.626362,77.36613,Pending
+C1176,Cattle wandering on road causing Stray Animals near Community Center in Rohini Sector 14.,Other,Stray Animals,Rohini Sector 14,since Monday,28.719616,77.131276,In Progress
+C1224,Pack of aggressive stray dogs causing Encroachment near Mother Dairy in Connaught Place.,Other,Encroachment,Connaught Place,5 days,28.630812,77.217152,Pending
+C1953,Continuous gridlock and Traffic Signal Down due to illegal encroaching near Post Office in Karol Bagh.,Traffic,Traffic Signal Down,Karol Bagh,2 days,28.651835,77.188717,Pending
+C2096,"Drinking water supply in Saket has brown smelly Water Leakage for 5 days, health risk to residents.",Water,Water Leakage,Saket,5 days,28.525848,77.207381,Pending
+C1960,Public health emergency due to unattended Overflowing Bin near school gate in Janakpuri Block B.,Sanitation,Overflowing Bin,Janakpuri Block B,almost 10 days,28.62263,77.088061,Pending
+C1955,Contaminated foul-smelling water coming from taps in Noida Sector 62 for 3 days.,Water,Water Leakage,Noida Sector 62,3 days,28.627412,77.366151,Resolved
+C1715,"Uncollected garbage and Dead Animal rotting in Krishna Nagar for 2 days, breeding mosquitoes.",Sanitation,Dead Animal,Krishna Nagar,2 days,28.661427,77.277248,Pending
+C1192,Unauthorized commercial establishment causing Public Nuisance late night in Vasant Kunj for 1 week.,Other,Public Nuisance,Vasant Kunj,1 week,28.528444,77.155349,Pending
+C1947,"Frequent sudden Power Outage in Civil Lines for 1 week, appliances getting damaged.",Electrical,Power Outage,Civil Lines,1 week,28.67855,77.221995,Resolved
+C1796,"Street dark and unsafe for women due to Power Outage on 3rd Cross, Rohini Sector 14 for since last Thursday.",Electrical,Power Outage,Rohini Sector 14,since last Thursday,28.718454,77.133826,In Progress
+C1457,Contaminated foul-smelling water coming from taps in Janakpuri Block B for 5 days.,Water,Water Contamination,Janakpuri Block B,5 days,28.620315,77.089445,In Progress
+C1150,Large Pothole right in front of City Hospital in Civil Lines. Please fix immediately.,Roads,Pothole,Civil Lines,48 hours,28.678079,77.221664,Pending
+C1818,Contaminated foul-smelling water coming from taps in Vasant Kunj for since Monday.,Water,Water Leakage,Vasant Kunj,since Monday,28.530471,77.152708,In Progress
+C2168,No drinking water received in Saket due to Low Water Pressure since last 2 weeks.,Water,Low Water Pressure,Saket,2 weeks,28.525643,77.207445,Pending
+C1325,Illegal temporary stalls and Public Nuisance blocking the walkway in Shahdara.,Other,Public Nuisance,Shahdara,since Monday,28.674861,77.28667,Resolved
+C1770,"Community dustbin has Dead Animal in Vasant Kunj, stray dogs and cows scattering trash everywhere.",Sanitation,Dead Animal,Vasant Kunj,1 week,28.529237,77.155783,Resolved
+C1596,"Major intersection in Civil Lines has Traffic Signal Down near Post Office, creating chaotic traffic jam.",Traffic,Traffic Signal Down,Civil Lines,3 days,28.676575,77.224051,Pending
+C1216,No drinking water received in Rohini Sector 14 due to Low Water Pressure since last 3 days.,Water,Low Water Pressure,Rohini Sector 14,3 days,28.716202,77.134282,Resolved
+C1317,Public health emergency due to unattended Dead Animal near school gate in Karol Bagh.,Sanitation,Dead Animal,Karol Bagh,48 hours,28.651073,77.189251,Pending
+C1017,Underground Low Water Pressure near Gate 2 causing street flooding in Rohini Sector 14.,Water,Low Water Pressure,Rohini Sector 14,1 week,28.719512,77.134288,Pending
+C2149,"Urgent repair needed for Road Damage near Post Office, road surface completely broken.",Roads,Road Damage,Krishna Nagar,5 days,28.661868,77.278311,Pending
+C1502,"Community dustbin has Overflowing Bin in Rohini Sector 14, stray dogs and cows scattering trash everywhere.",Sanitation,Overflowing Bin,Rohini Sector 14,2 weeks,28.716777,77.131225,Resolved
+C1117,Illegal waste and Overflowing Bin dumped openly beside Community Center in Saket.,Sanitation,Overflowing Bin,Saket,since Monday,28.523421,77.204638,Resolved
+C1088,"Underground sewer line has Sewage Overflow near Mother Dairy in Lajpat Nagar, water entering ground floor homes.",Sewage,Sewage Overflow,Lajpat Nagar,48 hours,28.568125,77.244463,Pending
+C1539,Black foul-smelling Sewage Blockage flooding the main road in Vasant Kunj for since last Thursday.,Sewage,Sewage Blockage,Vasant Kunj,since last Thursday,28.529363,77.152827,Pending

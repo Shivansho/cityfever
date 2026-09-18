@@ -19,24 +19,30 @@ civicflow/
 │   ├── schemas.py                     ← Pydantic validation models
 │   ├── requirements.txt               ← Backend dependencies
 │   ├── README.md                      ← Backend setup guide
+│   ├── civicflow.db                   ← SQLite database
 │   ├── routes/
 │   │   ├── __init__.py
 │   │   ├── complaints.py              ← Submission & triage pipeline
 │   │   ├── queues.py                  ← Prioritized department queues
-│   │   └── dashboard.py               ← Aggregated KPI statistics
+│   │   └── dashboard.py               ← Aggregated KPI statistics & clusters
 │   └── services/
 │       ├── __init__.py
 │       ├── classifier.py              ← Member 1: ML prediction & rule fallback
 │       ├── priority.py                ← Member 4: 100-pt explainable priority engine
 │       ├── entities.py                ← Member 4: Regex locality & duration parser
-│       └── duplicates.py              ← Member 4: TF-IDF & Haversine de-duplication
+│       ├── duplicates.py              ← Member 5: TF-IDF & Haversine de-duplication
+│       └── clusters.py                ← Member 3: Spatial clustering & hotspot detection
 │
-├── ml/                                ← Member 1: Model training & evaluation
+├── ml/                                ← ML pipelines & member stubs
 │   ├── train.py
 │   ├── predict.py
 │   ├── preprocess.py
 │   ├── evaluate.py
 │   ├── metrics.json
+│   ├── member1_classifier/            ← Member 1 instructions & integration
+│   ├── member3_clusters/              ← Member 3 instructions & integration
+│   ├── member4_priority_entities/      ← Member 4 instructions & integration
+│   ├── member5_duplicates/            ← Member 5 instructions & integration
 │   ├── models/
 │   │   ├── department_model.joblib
 │   │   └── issue_model.joblib
@@ -52,27 +58,28 @@ civicflow/
 │       ├── civicflow_test.csv
 │       └── dataset_summary.json
 │
-├── frontend/                          ← Member 3: React / Vite Citizen & Officer portal
+├── frontend/                          ← Member 6: React / Vite Citizen & Officer portal
 │   ├── index.html
 │   ├── package.json
 │   ├── vite.config.js
 │   └── src/
 │       ├── main.jsx
 │       ├── App.jsx
-│       ├── pages/
-│       │   ├── CitizenSubmit.jsx
-│       │   └── OfficerDashboard.jsx
-│       └── api/
-│           └── client.js              ← REST client for backend /api/*
-│
-├── mapbox/                            ← Member 5: Spatial maps & incident heatmap
-│   └── src/
-│       ├── MapView.jsx
-│       ├── heatmap.js
-│       └── filters.js
+│       ├── api/
+│       │   └── client.js              ← REST client for backend /api/*
+│       ├── components/
+│       │   ├── Map.jsx                ← Geospatial incident map with priority markers
+│       │   ├── ComplaintCard.jsx      ← Detailed complaint card with reason pills
+│       │   ├── QueueView.jsx          ← Department queue list sorted by priority
+│       │   └── StatCards.jsx          ← Summary KPI metrics cards
+│       └── pages/
+│           ├── CitizenSubmit.jsx      ← Citizen submission portal
+│           └── OfficerDashboard.jsx   ← Operations command center (Triage, Map, Queues)
 │
 └── docs/
     ├── API_CONTRACT.md                ← Canonical schema & endpoint specification
+    ├── SCHEMAS.md                     ← Data models & payload definitions
+    ├── INTEGRATION_GUIDE.md           ← Step-by-step service swap instructions
     ├── member_instructions/           ← Team instructions (Members 1 to 6)
     │   ├── 01_ml_classification.md
     │   ├── 02_backend_api.md
@@ -82,6 +89,7 @@ civicflow/
     │   └── 06_integration_testing_pitch.md
     ├── pitch/                         ← Demo scripts & presentation slides
     └── member4_handoff.md             ← Priority & entity handoff notes
+
 ```
 
 ---
