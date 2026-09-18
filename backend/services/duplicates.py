@@ -44,11 +44,11 @@ except ImportError:
 
 DUPLICATE_CONFIG = {
     # If coordinates are within proximity distance, this text similarity triggers duplicate
-    "text_similarity_with_coords": 0.65,
+    "text_similarity_with_coords": 0.40,
     # Distance in meters considered "same location"
     "proximity_distance_meters": 150.0,
     # If coordinates are missing or far, this higher text similarity triggers duplicate
-    "text_similarity_standalone": 0.82,
+    "text_similarity_standalone": 0.75,
     # Max distance (meters) to consider any spatial match
     "max_spatial_radius_meters": 500.0,
 }
@@ -125,7 +125,7 @@ def _compute_text_similarities(
         corpus = [target_text] + candidate_texts
         vectorizer = TfidfVectorizer(
             stop_words="english",
-            ngram_range=(1, 2),
+            ngram_range=(1, 1),
             min_df=1
         )
         tfidf_matrix = vectorizer.fit_transform(corpus)
@@ -193,7 +193,7 @@ def find_similar_complaints(
 
     for c in existing_complaints:
         c_id = str(c.get("id") or c.get("complaint_id") or "")
-        c_text = str(c.get("text") or c.get("description") or "")
+        c_text = str(c.get("complaint_text") or c.get("text") or c.get("description") or "")
         c_lat = c.get("latitude") if c.get("latitude") is not None else c.get("lat")
         c_lon = c.get("longitude") if c.get("longitude") is not None else c.get("lng", c.get("lon"))
         c_cluster = c.get("duplicate_cluster_id") or c.get("cluster_id")
