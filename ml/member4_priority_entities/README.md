@@ -46,4 +46,3 @@ Member 4 is responsible for operational intelligence: extracting named civic ent
 Run Member 4 test suite:
 ```bash
 python -m unittest tests/test_member4.py
-```
