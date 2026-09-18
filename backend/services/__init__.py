@@ -12,6 +12,7 @@ from .classifier import predict_complaint
 from .priority import calculate_priority, CONFIG as PRIORITY_CONFIG
 from .entities import extract_entities, extract_duration, extract_locality
 from .duplicates import find_similar_complaints, haversine_distance_meters, DUPLICATE_CONFIG
+from .clusters import cluster_spatial_incidents, detect_hotspots
 
 __all__ = [
     "predict_complaint",
@@ -21,6 +22,9 @@ __all__ = [
     "extract_locality",
     "find_similar_complaints",
     "haversine_distance_meters",
+    "cluster_spatial_incidents",
+    "detect_hotspots",
     "PRIORITY_CONFIG",
     "DUPLICATE_CONFIG",
 ]
+
