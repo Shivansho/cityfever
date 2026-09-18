@@ -1,95 +1,102 @@
 """
-CivicFlow — Complaint Prediction Module
-=======================================
-Member 1 | Standalone prediction function consumed by backend integration.
+predict.py
+Member 1 — ML Classification
 
-Definition of Done contract:
+This is the file Member 2 (backend) imports directly. Do not change the
+public function signature/contract without telling the backend owner:
+
     from ml.predict import predict_complaint
     predict_complaint("Large pothole near the market for three days")
+    ->
+    {
+        "department": "Roads",
+        "department_confidence": 0.94,
+        "issue_type": "Pothole",
+        "issue_confidence": 0.91
+    }
+
+Loads the saved joblib models/vectorizers ONCE at import time (module-level
+globals), so repeated calls are fast and no retraining ever happens at
+request time.
 """
 
 import os
 import joblib
-from ml.preprocess import clean_text
 
-_BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-_DEP_MODEL = None
-_DEP_VECT = None
-_ISSUE_MODEL = None
-_ISSUE_VECT = None
+from preprocess import clean_text
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODELS_DIR = os.path.join(BASE_DIR, "models")
+VECTORIZERS_DIR = os.path.join(BASE_DIR, "vectorizers")
+
+_DEPT_MODEL_PATH = os.path.join(MODELS_DIR, "department_model.joblib")
+_ISSUE_MODEL_PATH = os.path.join(MODELS_DIR, "issue_model.joblib")
+_DEPT_VEC_PATH = os.path.join(VECTORIZERS_DIR, "department_vectorizer.joblib")
+_ISSUE_VEC_PATH = os.path.join(VECTORIZERS_DIR, "issue_vectorizer.joblib")
+
+_missing = [
+    p for p in [_DEPT_MODEL_PATH, _ISSUE_MODEL_PATH, _DEPT_VEC_PATH, _ISSUE_VEC_PATH]
+    if not os.path.exists(p)
+]
+if _missing:
+    raise FileNotFoundError(
+        "predict.py could not find trained model/vectorizer file(s): "
+        f"{_missing}. Run `python train.py` first to generate them."
+    )
+
+_department_model = joblib.load(_DEPT_MODEL_PATH)
+_issue_model = joblib.load(_ISSUE_MODEL_PATH)
+_department_vectorizer = joblib.load(_DEPT_VEC_PATH)
+_issue_vectorizer = joblib.load(_ISSUE_VEC_PATH)
 
 
-def _load_artifacts():
-    global _DEP_MODEL, _DEP_VECT, _ISSUE_MODEL, _ISSUE_VECT
-    if _DEP_MODEL is not None:
-        return
-
-    dep_model_path = os.path.join(_BASE_DIR, "models", "department_model.joblib")
-    dep_vect_path = os.path.join(_BASE_DIR, "vectorizers", "department_vectorizer.joblib")
-    issue_model_path = os.path.join(_BASE_DIR, "models", "issue_model.joblib")
-    issue_vect_path = os.path.join(_BASE_DIR, "vectorizers", "issue_vectorizer.joblib")
-
-    if not os.path.exists(dep_model_path):
-        raise FileNotFoundError(f"Model artifacts not found in {_BASE_DIR}/models/. Run 'python ml/train.py' first.")
-
-    _DEP_MODEL = joblib.load(dep_model_path)
-    _DEP_VECT = joblib.load(dep_vect_path)
-    _ISSUE_MODEL = joblib.load(issue_model_path)
-    _ISSUE_VECT = joblib.load(issue_vect_path)
+def _predict_with_confidence(text_clean: str, model, vectorizer):
+    """Returns (predicted_label, confidence_float) for one fitted head."""
+    X = vectorizer.transform([text_clean])
+    proba = model.predict_proba(X)[0]
+    classes = model.classes_
+    best_idx = proba.argmax()
+    label = classes[best_idx]
+    confidence = float(proba[best_idx])
+    return label, confidence
 
 
 def predict_complaint(text: str) -> dict:
     """
-    Predict department and issue type from raw complaint text.
+    Fixed contract (do not rename keys — backend and frontend depend on
+    these exact field names):
 
-    Parameters
-    ----------
-    text : str
-        Citizen complaint description.
-
-    Returns
-    -------
-    dict
         {
-            "department": str,
-            "department_confidence": float,
-            "issue_type": str,
-            "issue_confidence": float
+          "department": str,
+          "department_confidence": float (0-1),
+          "issue_type": str,
+          "issue_confidence": float (0-1)
         }
     """
-    _load_artifacts()
+    if text is None or not str(text).strip():
+        raise ValueError("predict_complaint() requires non-empty complaint text")
 
-    processed = clean_text(text)
-    if not processed:
-        return {
-            "department": "Other",
-            "department_confidence": 0.50,
-            "issue_type": "General Inquiry",
-            "issue_confidence": 0.50
-        }
+    text_clean = clean_text(text)
 
-    # Department prediction
-    dep_features = _DEP_VECT.transform([processed])
-    dep_pred = _DEP_MODEL.predict(dep_features)[0]
-    dep_probs = _DEP_MODEL.predict_proba(dep_features)[0]
-    dep_conf = float(max(dep_probs))
-
-    # Issue type prediction
-    issue_features = _ISSUE_VECT.transform([processed])
-    issue_pred = _ISSUE_MODEL.predict(issue_features)[0]
-    issue_probs = _ISSUE_MODEL.predict_proba(issue_features)[0]
-    issue_conf = float(max(issue_probs))
+    department, department_confidence = _predict_with_confidence(
+        text_clean, _department_model, _department_vectorizer
+    )
+    issue_type, issue_confidence = _predict_with_confidence(
+        text_clean, _issue_model, _issue_vectorizer
+    )
 
     return {
-        "department": str(dep_pred),
-        "department_confidence": round(dep_conf, 2),
-        "issue_type": str(issue_pred),
-        "issue_confidence": round(issue_conf, 2),
+        "department": str(department),
+        "department_confidence": round(department_confidence, 4),
+        "issue_type": str(issue_type),
+        "issue_confidence": round(issue_confidence, 4),
     }
 
 
 if __name__ == "__main__":
-    test_text = "There is a large pothole near Krishna Nagar market for 3 days."
-    res = predict_complaint(test_text)
-    print("Test Prediction:")
-    print(res)
+    # quick manual smoke test: python predict.py "some complaint text"
+    import sys
+
+    sample = " ".join(sys.argv[1:]) or "Large pothole near the market for three days"
+    print(f"Input: {sample!r}")
+    print(predict_complaint(sample))

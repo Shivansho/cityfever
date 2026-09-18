@@ -14,14 +14,15 @@ router = APIRouter(prefix="/api/dashboard", tags=["dashboard"])
 def get_dashboard_stats(db: Session = Depends(get_db)):
     complaints = db.query(Complaint).all()
 
-    by_department = Counter(c.department for c in complaints if c.department)
-    by_priority_level = Counter(c.priority_level for c in complaints if c.priority_level)
+    status_counts = Counter(c.status for c in complaints if c.status)
+    priority_distribution = Counter(c.priority_level for c in complaints if c.priority_level)
+    department_breakdown = Counter(c.department for c in complaints if c.department)
+    duplicate_clusters = {c.duplicate_cluster_id for c in complaints if c.duplicate_cluster_id}
 
     return DashboardStats(
         total_complaints=len(complaints),
-        pending=sum(1 for c in complaints if c.status == "Pending"),
-        manual_review=sum(1 for c in complaints if c.status == "Manual Review"),
-        resolved=sum(1 for c in complaints if c.status == "Resolved"),
-        by_department=dict(by_department),
-        by_priority_level=dict(by_priority_level),
+        status_counts=dict(status_counts),
+        priority_distribution=dict(priority_distribution),
+        department_breakdown=dict(department_breakdown),
+        duplicate_clusters_count=len(duplicate_clusters),
     )

@@ -1,0 +1,166 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════════════════════
+   CIVICPULSE — Civic Intelligence & Municipal Operations Platform
+   Professional Dark GIS & Command Center Design System
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  /* Layered Dark Surfaces */
+  --bg-app: #080D14;
+  --bg-workspace: #0D141D;
+  --bg-panel: #111A24;
+  --bg-elevated: #151F2A;
+  --bg-hover: #192433;
+  --bg-active: #1C2B3C;
+
+  /* Structural Hairline Borders */
+  --border-subtle: rgba(38, 51, 66, 0.4);
+  --border-default: #263342;
+  --border-strong: #37475A;
+  --border-focus: #1597D4;
+
+  /* Human-Centric Typography */
+  --text-primary: #E8EDF3;
+  --text-secondary: #93A1B2;
+  --text-muted: #637184;
+  --text-dim: #455263;
+
+  /* Operational Accents */
+  --accent-civic: #1597D4;
+  --accent-civic-hover: #1FA6E8;
+  --accent-success: #27A878;
+  --accent-warning: #D49A32;
+  --accent-critical: #D65A5A;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-heading {
+  font-family: 'Inter', sans-serif;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ─── Layered Operational Containers & Rows ─── */
+.gis-panel {
+  background-color: var(--bg-panel);
+  border: 1px solid var(--border-default);
+}
+
+.gis-row {
+  border-bottom: 1px solid var(--border-default);
+  transition: background-color 0.15s ease;
+}
+
+.gis-row:hover {
+  background-color: var(--bg-hover);
+}
+
+/* ─── Operational Status Indicators ─── */
+.badge-critical {
+  background-color: rgba(214, 90, 90, 0.15);
+  color: #F08C8C;
+  border: 1px solid rgba(214, 90, 90, 0.35);
+}
+
+.badge-warning {
+  background-color: rgba(212, 154, 50, 0.15);
+  color: #E8B65A;
+  border: 1px solid rgba(212, 154, 50, 0.35);
+}
+
+.badge-civic {
+  background-color: rgba(21, 151, 212, 0.15);
+  color: #60C2F2;
+  border: 1px solid rgba(21, 151, 212, 0.35);
+}
+
+.badge-success {
+  background-color: rgba(39, 168, 120, 0.15);
+  color: #5FD4A7;
+  border: 1px solid rgba(39, 168, 120, 0.35);
+}
+
+.badge-muted {
+  background-color: rgba(99, 113, 132, 0.15);
+  color: #93A1B2;
+  border: 1px solid rgba(99, 113, 132, 0.3);
+}
+
+/* ─── Operational Precision Scrollbars ─── */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #080D14;
+}
+::-webkit-scrollbar-thumb {
+  background: #263342;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #37475A;
+}
+
+/* ─── Range Sliders ─── */
+input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  height: 16px;
+}
+input[type='range']::-webkit-slider-runnable-track {
+  background: #263342;
+  height: 3px;
+  border-radius: 2px;
+}
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -5px;
+  background: #1597D4;
+  height: 13px;
+  width: 13px;
+  border-radius: 50%;
+  border: 2px solid #0D141D;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+/* ─── MapLibre Control Overrides (Dark GIS) ─── */
+.maplibregl-map {
+  font-family: 'Inter', sans-serif;
+}
+.maplibregl-ctrl-group {
+  background: #111A24 !important;
+  border: 1px solid #263342 !important;
+  border-radius: 4px !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5) !important;
+}
+.maplibregl-ctrl-group button {
+  background: transparent !important;
+  border-color: #263342 !important;
+}
+.maplibregl-ctrl-group button:hover {
+  background: #151F2A !important;
+}
+.maplibregl-ctrl-group button .maplibregl-ctrl-icon {
+  filter: invert(1) opacity(0.7);
+}
