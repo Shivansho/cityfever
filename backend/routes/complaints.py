@@ -1,191 +1,149 @@
-"""
-CivicFlow — Complaints Endpoints
-================================
-Implements the canonical complaint pipeline:
-clean text -> ML classification -> entity extraction -> priority scoring -> duplicate check -> save
-"""
-
-import os
-import uuid
-from typing import Optional
-from fastapi import APIRouter, Depends, HTTPException, Query, status
+from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from sqlalchemy import desc
 
-from ..database import get_db
-from ..models import ComplaintModel
-from ..schemas import ComplaintCreate, ComplaintUpdate, ComplaintReassign, ComplaintResponse, ComplaintListResponse
-from ..services import predict_complaint, calculate_priority, extract_entities, find_similar_complaints
+from database import get_db
+from models import Complaint
+from schemas import ComplaintCreate, ComplaintOut, ComplaintUpdate, ReassignRequest
+from services import classifier, entities, priority, duplicates
 
-router = APIRouter(prefix="/complaints", tags=["Complaints"])
+router = APIRouter(prefix="/api/complaints", tags=["complaints"])
 
-CONFIDENCE_THRESHOLD = float(os.getenv("CONFIDENCE_THRESHOLD", "0.60"))
+# Below this department-confidence, we don't trust the auto-routing.
+CONFIDENCE_THRESHOLD = 0.60
 
 
-@router.post("", response_model=ComplaintResponse, status_code=status.HTTP_201_CREATED)
-def submit_complaint(payload: ComplaintCreate, db: Session = Depends(get_db)):
+@router.post("", response_model=ComplaintOut)
+def create_complaint(payload: ComplaintCreate, db: Session = Depends(get_db)):
     """
-    Submit a citizen complaint and run it through the full CivicFlow operational pipeline.
+    Full submission flow:
+    clean text -> ML prediction -> entity extraction -> priority scoring
+    -> duplicate detection -> save -> return complete result.
     """
-    clean_text = payload.complaint_text.strip()
-    if not clean_text:
-        raise HTTPException(status_code=400, detail="Complaint text cannot be empty")
+    text = payload.complaint_text.strip()
+    if not text:
+        raise HTTPException(status_code=400, detail="complaint_text cannot be empty")
 
-    # 1. ML Classification (Member 1)
-    ml_result = predict_complaint(clean_text)
-    department = ml_result["department"]
-    issue_type = ml_result["issue_type"]
-    dep_conf = ml_result["department_confidence"]
-    issue_conf = ml_result["issue_confidence"]
+    # 1. ML prediction (Member 1's contract)
+    prediction = classifier.predict(text)
 
-    # 2. Entity Extraction (Member 4)
-    entities = extract_entities(clean_text)
-    locality = entities.get("locality")
-    duration_text = entities.get("duration_text")
+    # 2. Entity extraction (Member 4's contract)
+    extracted = entities.extract(text, payload.locality)
 
-    # 3. Priority Scoring (Member 4)
-    priority_result = calculate_priority(
-        text=clean_text,
-        issue_type=issue_type,
-        duration_text=duration_text,
-        locality=locality
+    # 3. Priority scoring (Member 4's contract)
+    priority_result = priority.score(
+        department=prediction["department"],
+        issue_type=prediction["issue_type"],
+        duration_text=extracted["duration_text"],
+        text=text,
     )
-    priority_score = priority_result["priority_score"]
-    priority_level = priority_result["priority_level"]
-    priority_reasons = priority_result["priority_reasons"]
 
-    # 4. Duplicate Detection (Member 4)
-    # Query last 100 complaints for comparison
-    recent_records = db.query(ComplaintModel).order_by(desc(ComplaintModel.created_at)).limit(100).all()
-    existing_list = [r.to_dict() for r in recent_records]
+    # 4. Duplicate detection against existing complaints in the same
+    #    department (kept simple/in-memory-per-request for the hackathon;
+    #    fine at demo-day data volumes).
+    existing = [
+        {
+            "id": c.id,
+            "complaint_text": c.complaint_text,
+            "department": c.department,
+            "locality": c.locality,
+            "duplicate_cluster_id": c.duplicate_cluster_id,
+        }
+        for c in db.query(Complaint).filter(Complaint.department == prediction["department"]).all()
+    ]
+    cluster_id = duplicates.find_duplicate_cluster(
+        new_text=text,
+        new_department=prediction["department"],
+        new_locality=extracted["locality"],
+        existing=existing,
+    )
 
-    dup_result = find_similar_complaints(
-        complaint_text=clean_text,
+    # Confidence rule: never silently force a low-confidence prediction.
+    status = "Manual Review" if prediction["department_confidence"] < CONFIDENCE_THRESHOLD else "Pending"
+
+    complaint = Complaint(
+        complaint_text=text,
+        department=prediction["department"],
+        issue_type=prediction["issue_type"],
+        department_confidence=prediction["department_confidence"],
+        issue_confidence=prediction["issue_confidence"],
+        priority_score=priority_result["priority_score"],
+        priority_level=priority_result["priority_level"],
+        locality=extracted["locality"],
+        duration_text=extracted["duration_text"],
         latitude=payload.latitude,
         longitude=payload.longitude,
-        existing_complaints=existing_list
+        duplicate_cluster_id=cluster_id,
+        status=status,
     )
-    duplicate_cluster_id = dup_result["duplicate_cluster_id"] if dup_result["is_duplicate"] else None
-
-    # 5. Confidence check rule: if department confidence < 0.60 -> Manual Review
-    initial_status = "Manual Review" if dep_conf < CONFIDENCE_THRESHOLD else "Pending"
-
-    # 6. Generate ID and save
-    complaint_count = db.query(ComplaintModel).count()
-    new_id = f"C{1000 + complaint_count + 1}"
-
-    record = ComplaintModel(
-        id=new_id,
-        complaint_text=clean_text,
-        department=department,
-        issue_type=issue_type,
-        department_confidence=dep_conf,
-        issue_confidence=issue_conf,
-        priority_score=priority_score,
-        priority_level=priority_level,
-        locality=locality,
-        duration_text=duration_text,
-        latitude=payload.latitude,
-        longitude=payload.longitude,
-        duplicate_cluster_id=duplicate_cluster_id,
-        status=initial_status,
-    )
-    record.priority_reasons = priority_reasons
-
-    db.add(record)
+    db.add(complaint)
     db.commit()
-    db.refresh(record)
+    db.refresh(complaint)
+    return complaint
 
-    return record.to_dict()
 
-
-@router.get("", response_model=ComplaintListResponse)
+@router.get("", response_model=list[ComplaintOut])
 def list_complaints(
-    department: Optional[str] = Query(None),
-    status: Optional[str] = Query(None),
-    priority_level: Optional[str] = Query(None),
-    limit: int = Query(50, ge=1, le=200),
-    offset: int = Query(0, ge=0),
-    db: Session = Depends(get_db)
+    department: str | None = None,
+    status: str | None = None,
+    db: Session = Depends(get_db),
 ):
-    query = db.query(ComplaintModel)
+    query = db.query(Complaint)
     if department:
-        query = query.filter(ComplaintModel.department == department)
+        query = query.filter(Complaint.department == department)
     if status:
-        query = query.filter(ComplaintModel.status == status)
-    if priority_level:
-        query = query.filter(ComplaintModel.priority_level == priority_level)
-
-    total = query.count()
-    items = query.order_by(desc(ComplaintModel.priority_score), desc(ComplaintModel.created_at)).offset(offset).limit(limit).all()
-
-    return {
-        "total": total,
-        "items": [r.to_dict() for r in items]
-    }
+        query = query.filter(Complaint.status == status)
+    return query.order_by(Complaint.created_at.desc()).all()
 
 
-@router.get("/{id}", response_model=ComplaintResponse)
-def get_complaint(id: str, db: Session = Depends(get_db)):
-    record = db.query(ComplaintModel).filter(ComplaintModel.id == id).first()
-    if not record:
-        raise HTTPException(status_code=404, detail=f"Complaint with id '{id}' not found")
-    return record.to_dict()
+@router.get("/{complaint_id}", response_model=ComplaintOut)
+def get_complaint(complaint_id: str, db: Session = Depends(get_db)):
+    complaint = db.query(Complaint).filter(Complaint.id == complaint_id).first()
+    if not complaint:
+        raise HTTPException(status_code=404, detail="Complaint not found")
+    return complaint
 
 
-@router.patch("/{id}", response_model=ComplaintResponse)
-def update_complaint(id: str, payload: ComplaintUpdate, db: Session = Depends(get_db)):
-    record = db.query(ComplaintModel).filter(ComplaintModel.id == id).first()
-    if not record:
-        raise HTTPException(status_code=404, detail=f"Complaint with id '{id}' not found")
+@router.patch("/{complaint_id}", response_model=ComplaintOut)
+def update_complaint(complaint_id: str, payload: ComplaintUpdate, db: Session = Depends(get_db)):
+    complaint = db.query(Complaint).filter(Complaint.id == complaint_id).first()
+    if not complaint:
+        raise HTTPException(status_code=404, detail="Complaint not found")
 
-    if payload.status:
-        record.status = payload.status
-        db.commit()
-        db.refresh(record)
-
-    return record.to_dict()
-
-
-@router.post("/{id}/reassign", response_model=ComplaintResponse)
-def reassign_complaint(id: str, payload: ComplaintReassign, db: Session = Depends(get_db)):
-    record = db.query(ComplaintModel).filter(ComplaintModel.id == id).first()
-    if not record:
-        raise HTTPException(status_code=404, detail=f"Complaint with id '{id}' not found")
-
-    record.department = payload.department
-    if record.status == "Manual Review":
-        record.status = "Pending"
-
-    # Add reassignment reason to priority_reasons
-    reasons = record.priority_reasons
-    if payload.reason:
-        reasons.append(f"Reassigned to {payload.department}: {payload.reason}")
-    else:
-        reasons.append(f"Manually reassigned to {payload.department}")
-    record.priority_reasons = reasons
+    for field, value in payload.model_dump(exclude_unset=True).items():
+        setattr(complaint, field, value)
 
     db.commit()
-    db.refresh(record)
-    return record.to_dict()
+    db.refresh(complaint)
+    return complaint
 
 
-@router.get("/{id}/similar")
-def get_similar_complaints(id: str, db: Session = Depends(get_db)):
-    record = db.query(ComplaintModel).filter(ComplaintModel.id == id).first()
-    if not record:
-        raise HTTPException(status_code=404, detail=f"Complaint with id '{id}' not found")
+@router.post("/{complaint_id}/reassign", response_model=ComplaintOut)
+def reassign_complaint(complaint_id: str, payload: ReassignRequest, db: Session = Depends(get_db)):
+    complaint = db.query(Complaint).filter(Complaint.id == complaint_id).first()
+    if not complaint:
+        raise HTTPException(status_code=404, detail="Complaint not found")
 
-    matched: list[dict] = []
-    if record.duplicate_cluster_id:
-        cluster_items = db.query(ComplaintModel).filter(
-            ComplaintModel.duplicate_cluster_id == record.duplicate_cluster_id,
-            ComplaintModel.id != id
-        ).all()
-        matched = [c.to_dict() for c in cluster_items]
+    complaint.department = payload.department
+    complaint.status = "Pending"  # manual reassignment clears Manual Review
+    db.commit()
+    db.refresh(complaint)
+    return complaint
 
-    return {
-        "target_id": id,
-        "cluster_id": record.duplicate_cluster_id,
-        "matched_complaints": matched
-    }
+
+@router.get("/{complaint_id}/similar", response_model=list[ComplaintOut])
+def similar_complaints(complaint_id: str, db: Session = Depends(get_db)):
+    complaint = db.query(Complaint).filter(Complaint.id == complaint_id).first()
+    if not complaint:
+        raise HTTPException(status_code=404, detail="Complaint not found")
+
+    if not complaint.duplicate_cluster_id:
+        return []
+
+    return (
+        db.query(Complaint)
+        .filter(
+            Complaint.duplicate_cluster_id == complaint.duplicate_cluster_id,
+            Complaint.id != complaint.id,
+        )
+        .all()
+    )
