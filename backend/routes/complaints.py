@@ -1,9 +1,12 @@
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Response
 from sqlalchemy.orm import Session
 
 from database import get_db
 from models import Complaint
-from schemas import ComplaintCreate, ComplaintOut, ComplaintUpdate, ReassignRequest
+from schemas import (
+    ComplaintCreate, ComplaintOut, ComplaintListOut, ComplaintUpdate,
+    ReassignRequest, SimilarOut,
+)
 from services import classifier, entities, priority, duplicates
 
 router = APIRouter(prefix="/api/complaints", tags=["complaints"])
@@ -12,7 +15,7 @@ router = APIRouter(prefix="/api/complaints", tags=["complaints"])
 CONFIDENCE_THRESHOLD = 0.60
 
 
-@router.post("", response_model=ComplaintOut)
+@router.post("", response_model=ComplaintOut, status_code=201)
 def create_complaint(payload: ComplaintCreate, db: Session = Depends(get_db)):
     """
     Full submission flow:
@@ -68,6 +71,7 @@ def create_complaint(payload: ComplaintCreate, db: Session = Depends(get_db)):
         issue_confidence=prediction["issue_confidence"],
         priority_score=priority_result["priority_score"],
         priority_level=priority_result["priority_level"],
+        priority_reasons=priority_result["priority_reasons"],
         locality=extracted["locality"],
         duration_text=extracted["duration_text"],
         latitude=payload.latitude,
@@ -81,10 +85,13 @@ def create_complaint(payload: ComplaintCreate, db: Session = Depends(get_db)):
     return complaint
 
 
-@router.get("", response_model=list[ComplaintOut])
+@router.get("", response_model=ComplaintListOut)
 def list_complaints(
     department: str | None = None,
     status: str | None = None,
+    priority_level: str | None = None,
+    limit: int = 50,
+    offset: int = 0,
     db: Session = Depends(get_db),
 ):
     query = db.query(Complaint)
@@ -92,7 +99,17 @@ def list_complaints(
         query = query.filter(Complaint.department == department)
     if status:
         query = query.filter(Complaint.status == status)
-    return query.order_by(Complaint.created_at.desc()).all()
+    if priority_level:
+        query = query.filter(Complaint.priority_level == priority_level)
+
+    total = query.count()
+    items = (
+        query.order_by(Complaint.created_at.desc())
+        .offset(offset)
+        .limit(limit)
+        .all()
+    )
+    return ComplaintListOut(total=total, items=items)
 
 
 @router.get("/{complaint_id}", response_model=ComplaintOut)
@@ -130,20 +147,25 @@ def reassign_complaint(complaint_id: str, payload: ReassignRequest, db: Session 
     return complaint
 
 
-@router.get("/{complaint_id}/similar", response_model=list[ComplaintOut])
+@router.get("/{complaint_id}/similar", response_model=SimilarOut)
 def similar_complaints(complaint_id: str, db: Session = Depends(get_db)):
     complaint = db.query(Complaint).filter(Complaint.id == complaint_id).first()
     if not complaint:
         raise HTTPException(status_code=404, detail="Complaint not found")
 
     if not complaint.duplicate_cluster_id:
-        return []
+        return SimilarOut(target_id=complaint.id, cluster_id=None, matched_complaints=[])
 
-    return (
+    matched = (
         db.query(Complaint)
         .filter(
             Complaint.duplicate_cluster_id == complaint.duplicate_cluster_id,
             Complaint.id != complaint.id,
         )
         .all()
+    )
+    return SimilarOut(
+        target_id=complaint.id,
+        cluster_id=complaint.duplicate_cluster_id,
+        matched_complaints=matched,
     )
