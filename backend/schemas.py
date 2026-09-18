@@ -1,64 +1,61 @@
 """
-CivicFlow — Pydantic Validation & Serialization Schemas
-=======================================================
+Pydantic schemas. ComplaintOut matches the canonical schema exactly —
+do not rename fields here, frontend/analytics/Mapbox all depend on them.
 """
-
+from datetime import datetime
 from typing import Optional
-from pydantic import BaseModel, Field
+
+from pydantic import BaseModel
 
 
 class ComplaintCreate(BaseModel):
-    complaint_text: str = Field(..., min_length=5, description="Citizen complaint description")
-    latitude: Optional[float] = Field(None, description="GPS Latitude")
-    longitude: Optional[float] = Field(None, description="GPS Longitude")
+    complaint_text: str
+    latitude: Optional[float] = None
+    longitude: Optional[float] = None
+    # Locality can be sent by the client (e.g. picked on a map) but will be
+    # overwritten by Member 4's entity extraction if that returns a value.
+    locality: Optional[str] = None
 
 
-class ComplaintUpdate(BaseModel):
-    status: Optional[str] = Field(None, description="New status: Pending, In Progress, Resolved, Manual Review")
-
-
-class ComplaintReassign(BaseModel):
-    department: str = Field(..., description="Target department to reassign to")
-    reason: Optional[str] = Field(None, description="Reason for reassignment")
-
-
-class ComplaintResponse(BaseModel):
+class ComplaintOut(BaseModel):
     id: str
     complaint_text: str
-    department: str
-    issue_type: str
-    department_confidence: float
-    issue_confidence: float
-    priority_score: int
-    priority_level: str
-    priority_reasons: list[str] = []
+    department: Optional[str] = None
+    issue_type: Optional[str] = None
+    department_confidence: Optional[float] = None
+    issue_confidence: Optional[float] = None
+    priority_score: Optional[int] = None
+    priority_level: Optional[str] = None
     locality: Optional[str] = None
     duration_text: Optional[str] = None
     latitude: Optional[float] = None
     longitude: Optional[float] = None
     duplicate_cluster_id: Optional[str] = None
     status: str
-    created_at: Optional[str] = None
+    created_at: datetime
 
     class Config:
         from_attributes = True
 
 
-class ComplaintListResponse(BaseModel):
-    total: int
-    items: list[ComplaintResponse]
+class ComplaintUpdate(BaseModel):
+    department: Optional[str] = None
+    issue_type: Optional[str] = None
+    priority_score: Optional[int] = None
+    priority_level: Optional[str] = None
+    locality: Optional[str] = None
+    status: Optional[str] = None
 
 
-class QueueResponse(BaseModel):
+class ReassignRequest(BaseModel):
     department: str
-    pending_count: int
-    high_priority_count: int
-    items: list[ComplaintResponse]
+    reason: Optional[str] = None
 
 
-class DashboardStatsResponse(BaseModel):
+class DashboardStats(BaseModel):
     total_complaints: int
-    status_counts: dict[str, int]
-    priority_distribution: dict[str, int]
-    department_breakdown: dict[str, int]
-    duplicate_clusters_count: int
+    pending: int
+    manual_review: int
+    resolved: int
+    by_department: dict
+    by_priority_level: dict
