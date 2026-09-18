@@ -1,4 +1,4 @@
-# CivicFlow — Civic Incident Intelligence Platform
+# CityFever — Civic Incident Intelligence Platform
 
 > An AI-powered civic operations platform that automatically classifies complaints, extracts entities, calculates explainable operational priority, clusters duplicates, and provides real-time triage queues for municipal field teams.
 
@@ -7,7 +7,7 @@
 ## Repository Structure
 
 ```text
-civicflow/
+cityfever/
 ├── README.md                          ← Overall project readme
 ├── .gitignore                         ← Standard gitignore for Python, Node & DB
 ├── .env.example                       ← Shared environment variable template
