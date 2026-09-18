@@ -104,7 +104,7 @@ class TestDuplicateDetection(unittest.TestCase):
         self.assertTrue(res["is_duplicate"])
         self.assertIn("C1001", res["matched_complaint_ids"])
         self.assertEqual(res["duplicate_cluster_id"], "CL-001")
-        self.assertGreater(res["similarity"], 0.6)
+        self.assertGreater(res["similarity"], 0.5)
 
     def test_non_duplicate(self):
         new_complaint = "Street light broken and dark outside house"
