@@ -1,3 +1,0 @@
-"""
-CivicFlow — API Routes Package
-"""
